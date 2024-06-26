@@ -22,13 +22,13 @@ jobs:
           java-version: '11'
 
       - name: Build with Maven
-        run: mvn clean install
+        run: ./mvnw clean install
 
-      - name: Run tests
-        run: mvn test
+      - name: Verify with Maven
+        run: ./mvnw verify
 
       - name: Package application
-        run: mvn package
+        run: ./mvnw package
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
@@ -52,3 +52,4 @@ jobs:
       
       - name: Simulate deployment
         run: echo "Despliegue en curso..."
+
